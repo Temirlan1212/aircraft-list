@@ -20,6 +20,7 @@ export const aircraftApi = baseApi.injectEndpoints({
         url: `/aircrafts`,
         body: JSON.stringify(payload),
       }),
+      invalidatesTags: ["Aircrafts"],
     }),
     patchAircraft: create.mutation<void, PatchAircraft>({
       query: ({ id, ...payload }) => ({
@@ -27,6 +28,7 @@ export const aircraftApi = baseApi.injectEndpoints({
         url: `/aircrafts/${id}`,
         body: JSON.stringify(payload),
       }),
+      invalidatesTags: ["Aircrafts"],
     }),
   }),
   overrideExisting: true,
