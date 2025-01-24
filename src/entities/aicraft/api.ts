@@ -1,7 +1,7 @@
 import { baseApi } from "../../shared/api";
 import { Aircraft, AircraftId, AddAircraft, PatchAircraft } from "./model";
 
-export const usersApi = baseApi.injectEndpoints({
+export const aircraftApi = baseApi.injectEndpoints({
   endpoints: (create) => ({
     getAircrafts: create.query<Aircraft[], void>({
       query: () => "/aircrafts",
