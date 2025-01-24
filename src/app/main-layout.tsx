@@ -2,13 +2,9 @@
 import React, { PropsWithChildren } from "react";
 import { Layout, Menu, theme } from "antd";
 import { usePathname, useRouter } from "next/navigation";
+import { routes } from "@/shared/constants/routes";
 
 const { Header, Content } = Layout;
-
-const routes = {
-  home: { label: "Aircraft list", path: "/" },
-  statuses: { label: "Status list", path: "/statuses" },
-};
 
 const items = Object.entries(routes).map(([_, { label, path }]) => ({
   key: path,

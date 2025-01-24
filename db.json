@@ -1,67 +1,32 @@
 {
   "aircrafts": [
     {
-      "id": "8ee3",
+      "id": "a78c",
       "registrationNumber": "new",
-      "model": "model",
-      "year": "2018",
-      "status": "Active"
-    },
-    {
-      "id": "d09c",
-      "registrationNumber": "sadf",
-      "model": "break",
-      "year": "1988",
-      "status": "Active"
-    },
-    {
-      "id": "64fb",
-      "registrationNumber": "sadf",
-      "model": "falcon",
-      "year": "1988",
-      "status": "Active"
-    },
-    {
-      "id": "27a1",
-      "registrationNumber": "sadf",
-      "model": "asdf",
-      "year": "2018",
-      "status": "Active"
-    },
-    {
-      "id": "9a50",
-      "registrationNumber": "new ",
-      "model": "new",
+      "model": "dssf",
       "year": "2019",
-      "status": "Maintenance"
+      "status": "maintenance"
     },
     {
-      "id": "4ee4",
-      "registrationNumber": "weewsdf",
-      "model": "new",
-      "year": "2019",
-      "status": "Active"
-    },
-    {
-      "id": "d490",
-      "registrationNumber": "dfasd",
-      "model": "asdf",
-      "year": "2019",
-      "status": "Active"
-    },
-    {
-      "id": "a9ad",
-      "registrationNumber": "lolly",
-      "model": "new boing 3",
+      "id": "02cd",
+      "registrationNumber": "falcon",
+      "model": "falcon-2",
       "year": "2018",
-      "status": "Active"
+      "status": "retired"
     },
     {
-      "id": "55a3",
-      "registrationNumber": "sdf",
-      "model": "london 2",
-      "year": "2018",
-      "status": "Active"
+      "id": "35fb",
+      "registrationNumber": "testing",
+      "model": "test-12",
+      "year": "2016",
+      "status": "active"
+    },
+    {
+      "id": "4129",
+      "registrationNumber": "lims",
+      "model": "lims",
+      "year": "2024",
+      "status": "active"
     }
   ],
   "aircrafts_status_history": [

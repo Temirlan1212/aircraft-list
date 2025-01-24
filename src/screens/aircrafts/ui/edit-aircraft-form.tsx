@@ -3,6 +3,7 @@ import React, { useEffect } from "react";
 import type { FormProps } from "antd";
 import { Button, Form, Input, Select } from "antd";
 import { aircraftApi, AircraftId, PatchAircraft } from "@/entities/aicraft";
+import { statusApi } from "@/entities/status";
 
 const onFinishFailed: FormProps<PatchAircraft>["onFinishFailed"] = (
   errorInfo
@@ -25,6 +26,7 @@ export const EditAircraftForm = ({
   } = aircraftApi.useGetAircraftQuery(id);
   const [editAircraft, editAircraftMeta] =
     aircraftApi.usePatchAircraftMutation();
+  const getStatusesQuery = statusApi.useGetStatusesQuery();
 
   const onFinish: FormProps<PatchAircraft>["onFinish"] = (values) => {
     editAircraft({ ...values, id });
@@ -96,9 +98,13 @@ export const EditAircraftForm = ({
         rules={[{ required: true, message: "Please select the status!" }]}
       >
         <Select size="large">
-          <Select.Option value="Active">Active</Select.Option>
-          <Select.Option value="Inactive">Inactive</Select.Option>
-          <Select.Option value="Maintenance">Maintenance</Select.Option>
+          {getStatusesQuery.data?.map((item) => {
+            return (
+              <Select.Option key={item.id} value={item.value}>
+                {item.label}
+              </Select.Option>
+            );
+          })}
         </Select>
       </Form.Item>
 

@@ -5,6 +5,9 @@ import { Button, Space, Table, TableColumnProps } from "antd";
 import { Aircraft, aircraftApi } from "@/entities/aicraft";
 import { AnyObject } from "antd/es/_util/type";
 import { EditAircraftModal } from "./edit-aircraft-modal";
+import { EyeOutlined } from "@ant-design/icons";
+import Link from "next/link";
+import { paths, routes } from "@/shared/constants/routes";
 
 function Column<RecordType extends AnyObject>(
   props: TableColumnProps<RecordType> & {
@@ -52,6 +55,10 @@ export function AircraftsTable() {
             </Button>
 
             <EditAircraftModal id={record.id} />
+
+            <Link href={paths.aircraft({ aircraftId: record.id })}>
+              <Button icon={<EyeOutlined />}>detail page</Button>
+            </Link>
           </Space>
         )}
       />

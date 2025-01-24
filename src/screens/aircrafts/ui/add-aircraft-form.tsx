@@ -2,6 +2,7 @@ import React from "react";
 import type { FormProps } from "antd";
 import { Button, Form, Input, Select } from "antd";
 import { AddAircraft, aircraftApi } from "@/entities/aicraft";
+import { statusApi } from "@/entities/status";
 
 const onFinishFailed: FormProps<AddAircraft>["onFinishFailed"] = (
   errorInfo
@@ -12,6 +13,7 @@ const onFinishFailed: FormProps<AddAircraft>["onFinishFailed"] = (
 export const AddAircraftForm = ({ onSuccess }: { onSuccess?: () => void }) => {
   const [form] = Form.useForm();
   const [addAircraft, addAircraftMeta] = aircraftApi.useAddAircraftMutation();
+  const getStatusesQuery = statusApi.useGetStatusesQuery();
 
   const onFinish: FormProps<AddAircraft>["onFinish"] = (values) => {
     addAircraft(values);
@@ -26,7 +28,6 @@ export const AddAircraftForm = ({ onSuccess }: { onSuccess?: () => void }) => {
       labelCol={{ span: 8 }}
       wrapperCol={{ span: 24 }}
       style={{ maxWidth: 600 }}
-      initialValues={{ status: "Active" }}
       onFinish={onFinish}
       onFinishFailed={onFinishFailed}
       autoComplete="off"
@@ -78,9 +79,13 @@ export const AddAircraftForm = ({ onSuccess }: { onSuccess?: () => void }) => {
         rules={[{ required: true, message: "Please select the status!" }]}
       >
         <Select size="large">
-          <Select.Option value="Active">Active</Select.Option>
-          <Select.Option value="Inactive">Inactive</Select.Option>
-          <Select.Option value="Maintenance">Maintenance</Select.Option>
+          {getStatusesQuery.data?.map((item) => {
+            return (
+              <Select.Option key={item.id} value={item.value}>
+                {item.label}
+              </Select.Option>
+            );
+          })}
         </Select>
       </Form.Item>
 
