@@ -1,16 +1,14 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
+import { Montserrat } from "next/font/google";
 import { NextTopLoader } from "@/widgets/next-top-loader";
 import "./globals.css";
 import { StoreProvider } from "./providers/store-provider";
+import { themeConfig } from "@/shared/config/theme-config";
+import { ConfigProvider } from "antd";
+import { AntdRegistry } from "@ant-design/nextjs-registry";
 
-const geistSans = Geist({
+const geistSans = Montserrat({
   variable: "--font-geist-sans",
-  subsets: ["latin"],
-});
-
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
   subsets: ["latin"],
 });
 
@@ -26,11 +24,14 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${geistSans.variable} ${geistMono.variable}`}>
-        <StoreProvider>
-          <NextTopLoader />
-          {children}
-        </StoreProvider>
+      <body className={`${geistSans.variable}`}>
+        <NextTopLoader />
+
+        <ConfigProvider theme={themeConfig}>
+          <StoreProvider>
+            <AntdRegistry>{children}</AntdRegistry>
+          </StoreProvider>
+        </ConfigProvider>
       </body>
     </html>
   );
