@@ -9,10 +9,10 @@
     },
     {
       "id": "2",
-      "registrationNumber": "DEF456",
-      "model": "Airbus A320",
-      "year": 2015,
-      "status": "maintenance"
+      "registrationNumber": "old",
+      "model": "old",
+      "year": 2018,
+      "status": "dd"
     },
     {
       "id": "3",
@@ -20,6 +20,13 @@
       "model": "Cessna 172",
       "year": 2005,
       "status": "retired"
+    },
+    {
+      "id": "5f22",
+      "model": "old",
+      "registrationNumber": "old",
+      "year": 2018,
+      "status": "dd"
     }
   ],
   "statusHistory": [
@@ -40,6 +47,20 @@
       "date": "2025-01-15T09:30:00Z",
       "newStatus": "retired",
       "comment": "Aircraft retired from service"
+    }
+  ],
+  "statuses": [
+    {
+      "id": "1",
+      "value": "active"
+    },
+    {
+      "id": "2",
+      "value": "maintenance"
+    },
+    {
+      "id": "3",
+      "value": "retired"
     }
   ]
 }
