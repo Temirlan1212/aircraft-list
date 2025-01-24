@@ -29,22 +29,25 @@
       "status": "dd"
     }
   ],
-  "statusHistory": [
+  "aircrafts_status_history": [
     {
       "id": "1",
-      "date": "2025-01-01T10:00:00Z",
+      "createdAt": "2025-01-01T10:00:00Z",
+      "updatedAt": "2024-12-31T18:00:00.000Z",
       "newStatus": "active",
-      "comment": "Aircraft returned to active status"
+      "comment": "new"
     },
     {
       "id": "2",
-      "date": "2025-01-10T14:00:00Z",
+      "createdAt": "2025-01-10T14:00:00Z",
+      "updatedAt": "2024-12-31T18:00:00.000Z",
       "newStatus": "maintenance",
       "comment": "Routine maintenance scheduled"
     },
     {
       "id": "3",
-      "date": "2025-01-15T09:30:00Z",
+      "createdAt": "2025-01-15T09:30:00Z",
+      "updatedAt": "2024-12-31T18:00:00.000Z",
       "newStatus": "retired",
       "comment": "Aircraft retired from service"
     }
