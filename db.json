@@ -55,6 +55,13 @@
       "model": "new boing 3",
       "year": "2018",
       "status": "Active"
+    },
+    {
+      "id": "55a3",
+      "registrationNumber": "sdf",
+      "model": "london 2",
+      "year": "2018",
+      "status": "Active"
     }
   ],
   "aircrafts_status_history": [
