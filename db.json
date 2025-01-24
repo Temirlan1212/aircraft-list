@@ -52,15 +52,21 @@
   "statuses": [
     {
       "id": "1",
-      "value": "active"
+      "value": "active",
+      "label": "Active",
+      "color": "green"
     },
     {
       "id": "2",
-      "value": "maintenance"
+      "value": "maintenance",
+      "label": "Maintenance",
+      "color": "yellow"
     },
     {
       "id": "3",
-      "value": "retired"
+      "value": "retired",
+      "label": "Retired",
+      "color": "gray"
     }
   ]
 }

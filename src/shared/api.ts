@@ -4,6 +4,6 @@ const baseUrl = "http://localhost:8000";
 
 export const baseApi = createApi({
   baseQuery: fetchBaseQuery({ baseUrl }),
-  tagTypes: ["Aircrafts"],
+  tagTypes: ["Aircrafts", "Statuses"],
   endpoints: () => ({}),
 });
