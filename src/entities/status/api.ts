@@ -20,6 +20,7 @@ export const statusesApi = baseApi.injectEndpoints({
         url: `/statuses`,
         body: JSON.stringify(payload),
       }),
+      invalidatesTags: ["Statuses"],
     }),
     patchStatus: create.mutation<void, PatchStatus>({
       query: ({ id, ...payload }) => ({
@@ -27,6 +28,7 @@ export const statusesApi = baseApi.injectEndpoints({
         url: `/statuses/${id}`,
         body: JSON.stringify(payload),
       }),
+      invalidatesTags: ["Statuses"],
     }),
   }),
   overrideExisting: true,
