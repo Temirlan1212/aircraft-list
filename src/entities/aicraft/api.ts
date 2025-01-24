@@ -13,6 +13,7 @@ export const aircraftApi = baseApi.injectEndpoints({
     }),
     deleteAircraft: create.mutation<void, AircraftId>({
       query: (id) => ({ method: "DELETE", url: `/aircrafts/${id}` }),
+      invalidatesTags: ["Aircrafts"],
     }),
     addAircraft: create.mutation<void, AddAircraft>({
       query: (payload) => ({

@@ -1,32 +1,11 @@
 {
   "aircrafts": [
     {
-      "id": "1",
-      "registrationNumber": "ABC123",
-      "model": "Boeing 747",
-      "year": 2010,
-      "status": "active"
-    },
-    {
-      "id": "2",
-      "registrationNumber": "old",
-      "model": "old",
-      "year": 2018,
-      "status": "dd"
-    },
-    {
       "id": "3",
       "registrationNumber": "GHI789",
       "model": "Cessna 172",
       "year": 2005,
       "status": "retired"
-    },
-    {
-      "id": "5f22",
-      "model": "old",
-      "registrationNumber": "old",
-      "year": 2018,
-      "status": "dd"
     }
   ],
   "aircrafts_status_history": [
