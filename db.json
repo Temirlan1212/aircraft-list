@@ -12,7 +12,7 @@
       "registrationNumber": "testing",
       "model": "test-12",
       "year": "2016",
-      "status": "retired"
+      "status": "maintenance"
     },
     {
       "id": "4129",
@@ -78,6 +78,14 @@
       "newStatus": "active",
       "createdAt": "2025-01-24T20:50:01.037Z",
       "updatedAt": "2025-01-24T20:50:01.037Z"
+    },
+    {
+      "id": "c7ef",
+      "aicraftId": "35fb",
+      "comment": "nnn",
+      "newStatus": "maintenance",
+      "createdAt": "2025-01-24T20:58:22.584Z",
+      "updatedAt": "2025-01-24T20:58:22.584Z"
     }
   ],
   "statuses": [

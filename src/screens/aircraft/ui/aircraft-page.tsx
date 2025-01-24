@@ -5,6 +5,7 @@ import { AircraftDetails } from "./aircraft-details";
 import { aircraftApi } from "@/entities/aicraft";
 import { statusApi } from "@/entities/status";
 import { AircraftStatusHistoryTable } from "./aircraft-status-history-table";
+import { BackButton } from "@/shared/ui/back-button";
 
 export function AircraftPage() {
   const { aircraftId } = useGetSlugs();
@@ -19,6 +20,8 @@ export function AircraftPage() {
 
   return (
     <>
+      <BackButton />
+
       <AircraftDetails
         aircraft={{
           ...aircraftGetQuery.data,
