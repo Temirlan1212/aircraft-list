@@ -1,0 +1,45 @@
+{
+  "aircrafts": [
+    {
+      "id": "1",
+      "registrationNumber": "ABC123",
+      "model": "Boeing 747",
+      "year": 2010,
+      "status": "active"
+    },
+    {
+      "id": "2",
+      "registrationNumber": "DEF456",
+      "model": "Airbus A320",
+      "year": 2015,
+      "status": "maintenance"
+    },
+    {
+      "id": "3",
+      "registrationNumber": "GHI789",
+      "model": "Cessna 172",
+      "year": 2005,
+      "status": "retired"
+    }
+  ],
+  "statusHistory": [
+    {
+      "id": "1",
+      "date": "2025-01-01T10:00:00Z",
+      "newStatus": "active",
+      "comment": "Aircraft returned to active status"
+    },
+    {
+      "id": "2",
+      "date": "2025-01-10T14:00:00Z",
+      "newStatus": "maintenance",
+      "comment": "Routine maintenance scheduled"
+    },
+    {
+      "id": "3",
+      "date": "2025-01-15T09:30:00Z",
+      "newStatus": "retired",
+      "comment": "Aircraft retired from service"
+    }
+  ]
+}
