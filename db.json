@@ -6,6 +6,41 @@
       "model": "Cessna 172",
       "year": 2005,
       "status": "retired"
+    },
+    {
+      "id": "1a0d",
+      "registrationNumber": "this new number",
+      "model": "new model",
+      "year": "2018",
+      "status": "Active"
+    },
+    {
+      "id": "cde1",
+      "registrationNumber": "asdf",
+      "model": "asdfa",
+      "year": "2019",
+      "status": "Active"
+    },
+    {
+      "id": "3c56",
+      "registrationNumber": "asdf",
+      "model": "asdfa",
+      "year": "2019",
+      "status": "Active"
+    },
+    {
+      "id": "7544",
+      "registrationNumber": "asdf",
+      "model": "asdfa",
+      "year": "2019",
+      "status": "Active"
+    },
+    {
+      "id": "8ee3",
+      "registrationNumber": "sadf",
+      "model": "sdaf",
+      "year": "2018",
+      "status": "Active"
     }
   ],
   "aircrafts_status_history": [
