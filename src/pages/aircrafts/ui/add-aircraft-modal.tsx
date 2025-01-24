@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { Button, Modal } from "antd";
 import { AddAircraftForm } from "./add-aircraft-form";
+import { PlusOutlined } from "@ant-design/icons";
 
 export const AddAircraftModal: React.FC = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
@@ -19,9 +20,12 @@ export const AddAircraftModal: React.FC = () => {
 
   return (
     <>
-      <Button type="primary" onClick={showModal}>
-        Add new Aircraft
-      </Button>
+      <div>
+        <Button type="primary" onClick={showModal} icon={<PlusOutlined />}>
+          Add new Aircraft
+        </Button>
+      </div>
+
       <Modal
         title="Add Aircraft"
         open={isModalOpen}

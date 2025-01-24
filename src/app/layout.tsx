@@ -6,6 +6,7 @@ import { StoreProvider } from "./providers/store-provider";
 import { themeConfig } from "@/shared/config/theme-config";
 import { ConfigProvider } from "antd";
 import { AntdRegistry } from "@ant-design/nextjs-registry";
+import { MainLayout } from "./main-layout";
 
 const geistSans = Montserrat({
   variable: "--font-geist-sans",
@@ -29,7 +30,9 @@ export default function RootLayout({
 
         <ConfigProvider theme={themeConfig}>
           <StoreProvider>
-            <AntdRegistry>{children}</AntdRegistry>
+            <AntdRegistry>
+              <MainLayout>{children}</MainLayout>
+            </AntdRegistry>
           </StoreProvider>
         </ConfigProvider>
       </body>

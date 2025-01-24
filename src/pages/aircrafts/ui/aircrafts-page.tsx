@@ -5,9 +5,9 @@ import { AircraftsTable } from "./aircrafts-table";
 
 export function AircraftsPage() {
   return (
-    <div>
+    <>
       <AddAircraftModal />
       <AircraftsTable />
-    </div>
+    </>
   );
 }
