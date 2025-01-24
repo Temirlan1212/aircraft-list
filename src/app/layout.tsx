@@ -3,10 +3,11 @@ import { Montserrat } from "next/font/google";
 import { NextTopLoader } from "@/widgets/next-top-loader";
 import "./globals.css";
 import { StoreProvider } from "./providers/store-provider";
-import { themeConfig } from "@/shared/config/theme-config";
-import { ConfigProvider } from "antd";
-import { AntdRegistry } from "@ant-design/nextjs-registry";
 import { MainLayout } from "./main-layout";
+import {
+  AntdConfigProvider,
+  AntdRegistryProvider,
+} from "./providers/antd-provider";
 
 const geistSans = Montserrat({
   variable: "--font-geist-sans",
@@ -28,13 +29,13 @@ export default function RootLayout({
       <body className={`${geistSans.variable}`}>
         <NextTopLoader />
 
-        <ConfigProvider theme={themeConfig}>
+        <AntdConfigProvider>
           <StoreProvider>
-            <AntdRegistry>
+            <AntdRegistryProvider>
               <MainLayout>{children}</MainLayout>
-            </AntdRegistry>
+            </AntdRegistryProvider>
           </StoreProvider>
-        </ConfigProvider>
+        </AntdConfigProvider>
       </body>
     </html>
   );

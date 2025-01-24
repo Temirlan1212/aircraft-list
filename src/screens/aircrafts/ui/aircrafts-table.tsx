@@ -4,6 +4,7 @@ import React from "react";
 import { Button, Space, Table, TableColumnProps } from "antd";
 import { Aircraft, aircraftApi } from "@/entities/aicraft";
 import { AnyObject } from "antd/es/_util/type";
+import { EditAircraftModal } from "./edit-aircraft-modal";
 
 function Column<RecordType extends AnyObject>(
   props: TableColumnProps<RecordType> & {
@@ -49,6 +50,8 @@ export function AircraftsTable() {
             >
               delete
             </Button>
+
+            <EditAircraftModal id={record.id} />
           </Space>
         )}
       />
