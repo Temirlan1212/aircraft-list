@@ -1,25 +1,18 @@
 {
   "aircrafts": [
     {
-      "id": "a78c",
-      "registrationNumber": "new",
-      "model": "dssf",
-      "year": "2019",
-      "status": "maintenance"
-    },
-    {
       "id": "02cd",
       "registrationNumber": "falcon",
-      "model": "falcon-2",
+      "model": "falcon-3",
       "year": "2018",
-      "status": "retired"
+      "status": "maintenance"
     },
     {
       "id": "35fb",
       "registrationNumber": "testing",
       "model": "test-12",
       "year": "2016",
-      "status": "active"
+      "status": "retired"
     },
     {
       "id": "4129",
@@ -31,25 +24,60 @@
   ],
   "aircrafts_status_history": [
     {
-      "id": "1",
-      "createdAt": "2025-01-01T10:00:00Z",
-      "updatedAt": "2024-12-31T18:00:00.000Z",
-      "newStatus": "active",
-      "comment": "new"
-    },
-    {
-      "id": "2",
-      "createdAt": "2025-01-10T14:00:00Z",
-      "updatedAt": "2024-12-31T18:00:00.000Z",
-      "newStatus": "maintenance",
-      "comment": "Routine maintenance scheduled"
-    },
-    {
-      "id": "3",
-      "createdAt": "2025-01-15T09:30:00Z",
-      "updatedAt": "2024-12-31T18:00:00.000Z",
+      "id": "23a6",
+      "aicraftId": "02cd",
+      "comment": "new",
       "newStatus": "retired",
-      "comment": "Aircraft retired from service"
+      "createdAt": "2025-01-24T20:16:19.821Z",
+      "updatedAt": "2025-01-24T20:16:19.821Z"
+    },
+    {
+      "id": "4cb5",
+      "aicraftId": "02cd",
+      "comment": "dust",
+      "newStatus": "maintenance",
+      "createdAt": "2025-01-24T20:17:17.855Z",
+      "updatedAt": "2025-01-24T20:17:17.855Z"
+    },
+    {
+      "id": "05ed",
+      "aicraftId": "02cd",
+      "comment": "this can lead to ",
+      "newStatus": "active",
+      "createdAt": "2025-01-24T20:17:29.154Z",
+      "updatedAt": "2025-01-24T20:17:29.154Z"
+    },
+    {
+      "id": "d4d8",
+      "aicraftId": "02cd",
+      "comment": "dust",
+      "newStatus": "maintenance",
+      "createdAt": "2025-01-24T20:38:42.842Z",
+      "updatedAt": "2025-01-24T20:38:42.842Z"
+    },
+    {
+      "id": "b15f",
+      "aicraftId": "4129",
+      "comment": "new comm",
+      "newStatus": "active",
+      "createdAt": "2025-01-24T20:49:46.083Z",
+      "updatedAt": "2025-01-24T20:49:46.083Z"
+    },
+    {
+      "id": "0431",
+      "aicraftId": "4129",
+      "comment": "sdf",
+      "newStatus": "maintenance",
+      "createdAt": "2025-01-24T20:49:53.672Z",
+      "updatedAt": "2025-01-24T20:49:53.672Z"
+    },
+    {
+      "id": "623c",
+      "aicraftId": "4129",
+      "comment": "to active",
+      "newStatus": "active",
+      "createdAt": "2025-01-24T20:50:01.037Z",
+      "updatedAt": "2025-01-24T20:50:01.037Z"
     }
   ],
   "statuses": [

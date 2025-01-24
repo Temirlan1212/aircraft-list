@@ -15,5 +15,4 @@ export const paths = {
 export const routes = {
   home: { label: "Aircraft list", path: paths.home },
   statuses: { label: "Status list", path: paths.statuses },
-  aircrafts: { label: "Aircraft list", path: paths.aircrafts },
 };

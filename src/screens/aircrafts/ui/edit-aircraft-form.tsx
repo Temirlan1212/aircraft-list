@@ -1,9 +1,18 @@
 "use client";
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import type { FormProps } from "antd";
 import { Button, Form, Input, Select } from "antd";
-import { aircraftApi, AircraftId, PatchAircraft } from "@/entities/aicraft";
+import {
+  Aircraft,
+  aircraftApi,
+  AircraftId,
+  PatchAircraft,
+} from "@/entities/aicraft";
 import { statusApi } from "@/entities/status";
+import {
+  AddAircraftStatusHistory,
+  aircraftStatusHistoryApi,
+} from "@/entities/aicraft-status-history";
 
 const onFinishFailed: FormProps<PatchAircraft>["onFinishFailed"] = (
   errorInfo
@@ -18,6 +27,7 @@ export const EditAircraftForm = ({
   onSuccess?: () => void;
   id: AircraftId;
 }) => {
+  const [statusValue, setStatusValue] = useState<string | undefined>(undefined);
   const [form] = Form.useForm();
   const {
     data: aircraft,
@@ -26,11 +36,33 @@ export const EditAircraftForm = ({
   } = aircraftApi.useGetAircraftQuery(id);
   const [editAircraft, editAircraftMeta] =
     aircraftApi.usePatchAircraftMutation();
+  const [addAircraftStatusHistory, addAircraftStatusHistoryMeta] =
+    aircraftStatusHistoryApi.useAddAircraftStatusHistoryMutation();
+
   const getStatusesQuery = statusApi.useGetStatusesQuery();
 
-  const onFinish: FormProps<PatchAircraft>["onFinish"] = (values) => {
-    editAircraft({ ...values, id });
-    form.resetFields();
+  const isStatusValueChanged = statusValue != undefined;
+
+  const onFinish: FormProps<Aircraft & AddAircraftStatusHistory>["onFinish"] = (
+    values
+  ) => {
+    const aicraftId = id;
+
+    editAircraft({
+      model: values.model,
+      id: aicraftId,
+      registrationNumber: values.registrationNumber,
+      year: values.year,
+      status: values.status,
+    });
+    addAircraftStatusHistory({
+      aicraftId: aicraftId,
+      comment: values.comment,
+      newStatus: values.status,
+    });
+
+    form.setFieldValue("comment", undefined);
+
     onSuccess && onSuccess();
   };
 
@@ -41,7 +73,7 @@ export const EditAircraftForm = ({
   if (isLoading) return <>loading...</>;
 
   return (
-    <Form<PatchAircraft>
+    <Form<Aircraft & AddAircraftStatusHistory>
       form={form}
       name="edit-aircraft"
       labelCol={{ span: 8 }}
@@ -95,6 +127,12 @@ export const EditAircraftForm = ({
       <Form.Item<PatchAircraft>
         label="Status"
         name="status"
+        getValueProps={(v) => {
+          if (aircraft?.status !== v) setStatusValue(v);
+          else setStatusValue(undefined);
+
+          return { value: v };
+        }}
         rules={[{ required: true, message: "Please select the status!" }]}
       >
         <Select size="large">
@@ -108,6 +146,16 @@ export const EditAircraftForm = ({
         </Select>
       </Form.Item>
 
+      {isStatusValueChanged && (
+        <Form.Item<PatchAircraft & AddAircraftStatusHistory>
+          label="Status Comment"
+          name="comment"
+          rules={[{ required: true, message: "Please leave the comment!" }]}
+        >
+          <Input size="large" />
+        </Form.Item>
+      )}
+
       <br />
 
       <Form.Item label={null}>
@@ -118,7 +166,7 @@ export const EditAircraftForm = ({
           htmlType="submit"
           size="large"
         >
-          Edit new aircraft
+          Edit aircraft
         </Button>
       </Form.Item>
     </Form>

@@ -7,10 +7,10 @@ import {
   PatchAircraftStatusHistory,
 } from "./model";
 
-export const aircraftStatusHistory = baseApi.injectEndpoints({
+export const aircraftStatusHistoryApi = baseApi.injectEndpoints({
   endpoints: (create) => ({
-    getAircraftsStatusHistory: create.query<AircraftStatusHistory[], void>({
-      query: () => "/aircrafts_status_history",
+    getAircraftsStatusHistory: create.query<AircraftStatusHistory[], string>({
+      query: (params) => `/aircrafts_status_history${params}`,
       providesTags: [
         "AircraftStatusHistory",
         { type: "AircraftStatusHistory", id: "LIST" },

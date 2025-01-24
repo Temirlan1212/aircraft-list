@@ -32,7 +32,7 @@ export const MainLayout = ({ children }: PropsWithChildren) => {
           onClick={(item) => router.push(item.key)}
         />
       </Header>
-      <Content style={{ padding: "20px 25px" }}>
+      <Content style={{ padding: "20px", overflow: "scroll" }}>
         <div
           style={{
             background: colorBgContainer,
@@ -42,8 +42,8 @@ export const MainLayout = ({ children }: PropsWithChildren) => {
             display: "flex",
             flexDirection: "column",
             gap: "20px",
-            height: "calc(100dvh - 100px)",
-            overflow: "scroll",
+            overflow: "hidden",
+            // height: "calc(100dvh - 100px)",
           }}
         >
           {children}

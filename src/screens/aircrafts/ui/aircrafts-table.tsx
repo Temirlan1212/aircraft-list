@@ -28,7 +28,12 @@ export function AircraftsTable() {
   if (isLoading) return <>loading...</>;
 
   return (
-    <Table<DataType> dataSource={aircrafts} pagination={false}>
+    <Table<DataType>
+      dataSource={aircrafts}
+      pagination={false}
+      bordered
+      style={{ overflowX: "auto" }}
+    >
       <Column title="Model" dataIndex="model" key="model" />
       <Column title="Year" dataIndex="year" key="year" />
       <Column

@@ -10,8 +10,14 @@ export const AircraftDetails = ({
 }) => {
   if (aircraft == null) return null;
   return (
-    <Card title="Aircraft Details" bordered={false}>
-      <Descriptions column={1} bordered>
+    <Card title="Aircraft Details" bordered bodyStyle={{ padding: 12 }}>
+      <Descriptions
+        column={1}
+        bordered
+        style={{
+          overflowX: "auto",
+        }}
+      >
         {/* Registration Number */}
         <Descriptions.Item label="Registration Number">
           {aircraft.registrationNumber}

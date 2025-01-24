@@ -4,6 +4,7 @@ import { useGetSlugs } from "@/shared/hooks/use-get-slugs";
 import { AircraftDetails } from "./aircraft-details";
 import { aircraftApi } from "@/entities/aicraft";
 import { statusApi } from "@/entities/status";
+import { AircraftStatusHistoryTable } from "./aircraft-status-history-table";
 
 export function AircraftPage() {
   const { aircraftId } = useGetSlugs();
@@ -24,6 +25,8 @@ export function AircraftPage() {
           ...(statusGetQuery.data || {}),
         }}
       />
+
+      <AircraftStatusHistoryTable />
     </>
   );
 }
