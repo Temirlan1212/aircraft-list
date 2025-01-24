@@ -10,15 +10,18 @@ const onFinishFailed: FormProps<AddAircraft>["onFinishFailed"] = (
 };
 
 export const AddAircraftForm = ({ onSuccess }: { onSuccess?: () => void }) => {
+  const [form] = Form.useForm();
   const [addAircraft, addAircraftMeta] = aircraftApi.useAddAircraftMutation();
 
   const onFinish: FormProps<AddAircraft>["onFinish"] = (values) => {
     addAircraft(values);
+    form.resetFields();
     onSuccess && onSuccess();
   };
 
   return (
     <Form<AddAircraft>
+      form={form}
       name="add-aircraft"
       labelCol={{ span: 8 }}
       wrapperCol={{ span: 24 }}

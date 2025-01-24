@@ -1,20 +1,6 @@
 {
   "aircrafts": [
     {
-      "id": "3",
-      "registrationNumber": "GHI789",
-      "model": "Cessna 172",
-      "year": 2005,
-      "status": "retired"
-    },
-    {
-      "id": "1a0d",
-      "registrationNumber": "this new number",
-      "model": "new model",
-      "year": "2018",
-      "status": "Active"
-    },
-    {
       "id": "cde1",
       "registrationNumber": "asdf",
       "model": "asdfa",
@@ -40,6 +26,48 @@
       "registrationNumber": "sadf",
       "model": "sdaf",
       "year": "2018",
+      "status": "Active"
+    },
+    {
+      "id": "d09c",
+      "registrationNumber": "sadf",
+      "model": "asdf",
+      "year": "1988",
+      "status": "Active"
+    },
+    {
+      "id": "64fb",
+      "registrationNumber": "sadf",
+      "model": "asdf",
+      "year": "1988",
+      "status": "Active"
+    },
+    {
+      "id": "27a1",
+      "registrationNumber": "sadf",
+      "model": "asdf",
+      "year": "2018",
+      "status": "Active"
+    },
+    {
+      "id": "9a50",
+      "registrationNumber": "new ",
+      "model": "new",
+      "year": "2019",
+      "status": "Maintenance"
+    },
+    {
+      "id": "4ee4",
+      "registrationNumber": "weewsdf",
+      "model": "new",
+      "year": "2019",
+      "status": "Active"
+    },
+    {
+      "id": "d490",
+      "registrationNumber": "dfasd",
+      "model": "asdf",
+      "year": "2019",
       "status": "Active"
     }
   ],
