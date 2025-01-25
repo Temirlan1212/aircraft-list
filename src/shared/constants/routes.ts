@@ -8,6 +8,7 @@ export const paths = {
   home: "/",
   statuses: "/statuses",
   aircrafts: "/aircrafts",
+  rootSitemap: "/sitemap.xml",
   aircraft: ({ aircraftId }: Pick<SlugsProps, "aircraftId">) =>
     `/aircrafts/${aircraftId}`,
 };
@@ -15,4 +16,5 @@ export const paths = {
 export const routes = {
   home: { label: "Aircraft list", path: paths.home },
   statuses: { label: "Status list", path: paths.statuses },
+  sitemap: { label: "Seo sitemap", path: paths.rootSitemap },
 };
