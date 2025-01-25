@@ -1,7 +1,7 @@
 "use client";
 import React, { useEffect, useState } from "react";
 import type { FormProps } from "antd";
-import { Button, Form, Input, Select } from "antd";
+import { Button, Form, Input, Select, Tag } from "antd";
 import {
   Aircraft,
   aircraftApi,
@@ -139,7 +139,7 @@ export const EditAircraftForm = ({
           {getStatusesQuery.data?.map((item) => {
             return (
               <Select.Option key={item.id} value={item.value}>
-                {item.label}
+                <Tag color={item.color}> {item.label}</Tag>
               </Select.Option>
             );
           })}

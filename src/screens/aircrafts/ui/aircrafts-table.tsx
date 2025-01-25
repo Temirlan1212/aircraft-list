@@ -1,13 +1,14 @@
 "use client";
 
 import React from "react";
-import { Button, Space, Table, TableColumnProps } from "antd";
+import { Button, Space, Table, TableColumnProps, Tag } from "antd";
 import { Aircraft, aircraftApi } from "@/entities/aicraft";
 import { AnyObject } from "antd/es/_util/type";
 import { EditAircraftModal } from "./edit-aircraft-modal";
 import { EyeOutlined } from "@ant-design/icons";
 import Link from "next/link";
-import { paths, routes } from "@/shared/constants/routes";
+import { paths } from "@/shared/constants/routes";
+import { statusApi } from "@/entities/status";
 
 function Column<RecordType extends AnyObject>(
   props: TableColumnProps<RecordType> & {
@@ -19,6 +20,16 @@ function Column<RecordType extends AnyObject>(
 }
 
 interface DataType extends Aircraft {}
+
+const RenderStatusColumn = ({ value }: { value: string }) => {
+  const getStatusQuery = statusApi.useGetStatusQuery(value);
+  if (getStatusQuery.isLoading) return <>loading...</>;
+  if (getStatusQuery.data == null) return value;
+
+  return (
+    <Tag color={getStatusQuery.data.color}>{getStatusQuery.data.label}</Tag>
+  );
+};
 
 export function AircraftsTable() {
   const { data: aircrafts, isLoading } = aircraftApi.useGetAircraftsQuery();
@@ -41,7 +52,12 @@ export function AircraftsTable() {
         dataIndex="registrationNumber"
         key="registrationNumber"
       />
-      <Column title="Status" dataIndex="status" key="status" />
+      <Column
+        title="Status"
+        dataIndex="status"
+        key="status"
+        render={(v) => <RenderStatusColumn value={v} />}
+      />
       <Column
         title="Action"
         key="action"

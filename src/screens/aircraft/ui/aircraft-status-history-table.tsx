@@ -1,7 +1,7 @@
 "use client";
 
 import React from "react";
-import { Card, Table, TableColumnProps } from "antd";
+import { Card, Table, TableColumnProps, Tag } from "antd";
 import { AnyObject } from "antd/es/_util/type";
 import {
   AircraftStatusHistory,
@@ -9,6 +9,7 @@ import {
 } from "@/entities/aicraft-status-history";
 import { dateUtils } from "@/shared/utils/date";
 import { useGetSlugs } from "@/shared/hooks/use-get-slugs";
+import { statusApi } from "@/entities/status";
 
 function Column<RecordType extends AnyObject>(
   props: TableColumnProps<RecordType> & {
@@ -18,6 +19,16 @@ function Column<RecordType extends AnyObject>(
 ) {
   return <Table.Column {...props} />;
 }
+
+const RenderStatusColumn = ({ value }: { value: string }) => {
+  const getStatusQuery = statusApi.useGetStatusQuery(value);
+  if (getStatusQuery.isLoading) return <>loading...</>;
+  if (getStatusQuery.data == null) return value;
+
+  return (
+    <Tag color={getStatusQuery.data.color}>{getStatusQuery.data.label}</Tag>
+  );
+};
 
 interface DataType extends AircraftStatusHistory {}
 
@@ -39,7 +50,12 @@ export function AircraftStatusHistoryTable() {
         pagination={false}
         style={{ overflowX: "auto" }}
       >
-        <Column title="New status" dataIndex="newStatus" key="newStatus" />
+        <Column
+          title="New status"
+          dataIndex="newStatus"
+          key="newStatus"
+          render={(v) => <RenderStatusColumn value={v} />}
+        />
         <Column title="Comment" dataIndex="comment" key="comment" />
         <Column
           title="Created date"

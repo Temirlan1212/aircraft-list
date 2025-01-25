@@ -1,6 +1,6 @@
 import React from "react";
 import type { FormProps } from "antd";
-import { Button, Form, Input, Select } from "antd";
+import { Button, Form, Input, Select, Tag } from "antd";
 import { AddAircraft, aircraftApi } from "@/entities/aicraft";
 import { statusApi } from "@/entities/status";
 
@@ -82,7 +82,7 @@ export const AddAircraftForm = ({ onSuccess }: { onSuccess?: () => void }) => {
           {getStatusesQuery.data?.map((item) => {
             return (
               <Select.Option key={item.id} value={item.value}>
-                {item.label}
+                <Tag color={item.color}> {item.label}</Tag>
               </Select.Option>
             );
           })}
