@@ -1,38 +1,5 @@
 import { AircraftPage } from "@/screens/aircraft";
-import { paths, SlugsProps } from "@/shared/constants/routes";
-import { getAircraft, getAircrafts } from "./service";
 
-interface Props {
-  params: SlugsProps;
-}
-
-export const generateMetadata = async ({ params }: Props) => {
-  const aircraftId = String((params?.aircraftId as unknown as string) || "0");
-  const aircraft = await getAircraft(aircraftId);
-
-  return {
-    title: `${aircraft?.model || ""} - model`,
-    description: aircraft?.registrationNumber || "",
-    openGraph: {
-      title: aircraft?.model || "",
-      description: aircraft?.registrationNumber || "",
-      url: `${process.env.NEXT_PUBLIC_BASE_URL}${paths.aircraft({ aircraftId })}`,
-      type: "article",
-    },
-    twitter: {
-      title: aircraft?.model || "",
-      description: aircraft?.registrationNumber || "",
-    },
-  };
-};
-
-export const generateStaticParams = async () => {
-  const aircrafts = await getAircrafts();
-  return aircrafts.map((aicraft) => ({
-    aircrafId: aicraft.id.toString(),
-  }));
-};
-
-export default function Page() {
+export default async function Page() {
   return <AircraftPage />;
 }
