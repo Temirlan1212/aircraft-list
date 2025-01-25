@@ -32,10 +32,6 @@ export const EditStatusForm = ({
   } = statusApi.useGetStatusByIdQuery(id);
   const [editStatus, editStatusMeta] = statusApi.usePatchStatusMutation();
 
-  console.log(status);
-
-  const getStatusesQuery = statusApi.useGetStatusesQuery();
-
   const onFinish: FormProps<Status>["onFinish"] = (values) => {
     const statusId = id;
 
@@ -64,14 +60,6 @@ export const EditStatusForm = ({
       onFinishFailed={onFinishFailed}
       autoComplete="off"
     >
-      <Form.Item<AddStatus>
-        label="Value"
-        name="value"
-        rules={[{ required: true, message: "Please input the value!" }]}
-      >
-        <Input size="large" />
-      </Form.Item>
-      <br />
       <Form.Item<AddStatus>
         label="Label"
         name="label"
