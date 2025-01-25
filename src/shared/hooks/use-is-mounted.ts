@@ -3,11 +3,14 @@ import { useEffect, useState } from "react";
 export function useIsMounted() {
   const [isMounted, setIsMounted] = useState(false); // unmounted by default
 
+  const setMounted = () => setIsMounted(true);
+  const setUnMounted = () => setIsMounted(false);
+
   useEffect(() => {
-    setIsMounted(true); // mounted
+    setMounted();
 
     return () => {
-      setIsMounted(false); // unmounted
+      setUnMounted();
     };
   }, []); // run once on mount
 

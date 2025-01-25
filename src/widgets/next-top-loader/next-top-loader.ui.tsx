@@ -1,6 +1,6 @@
 "use client";
 import NextTopLoader from "nextjs-toploader";
-import { useIsMounted } from "@/shared/hooks/useIsMounted";
+import { useIsMounted } from "@/shared/hooks/use-is-mounted";
 
 export default function Page() {
   const isMounted = useIsMounted();
