@@ -6,7 +6,7 @@
     "dev": "concurrently \"next dev\" \"json-server --watch db.json --port 8000\"",
     "dev:server": "json-server --watch db.json --port 8000",
     "build": "next build",
-    "start": "next start",
+    "start": "concurrently  \"next start\" \"json-server --watch db.json --port 8000\" \"next build\"",
     "lint": "next lint",
     "prepare": "husky",
     "format": "prettier --write \"**/*.{ts,tsx,js,jsx,md,mdx,css,yaml,yml}\"",
