@@ -2,31 +2,87 @@
   "aircrafts": [
     {
       "id": "02cd",
-      "registrationNumber": "falcon",
-      "model": "falcon-3",
+      "registrationNumber": "N123AA",
+      "model": "Boeing 737",
       "year": "2018",
       "status": "maintenance"
     },
     {
       "id": "35fb",
-      "registrationNumber": "testing",
-      "model": "test-12",
+      "registrationNumber": "G-XLEO",
+      "model": "Airbus A380",
       "year": "2016",
       "status": "flying"
     },
     {
       "id": "4129",
-      "registrationNumber": "lims",
-      "model": "lims",
+      "registrationNumber": "VH-OQA",
+      "model": "Boeing 747",
       "year": "2024",
       "status": "active"
     },
     {
       "id": "508a",
-      "registrationNumber": "robot",
-      "model": "robot",
+      "registrationNumber": "D-AIMN",
+      "model": "Airbus A340",
       "year": "2000",
       "status": "retired"
+    },
+    {
+      "id": "6ae1",
+      "registrationNumber": "N789AB",
+      "model": "Boeing 787 Dreamliner",
+      "year": "2021",
+      "status": "active"
+    },
+    {
+      "id": "8b2f",
+      "registrationNumber": "F-GSPS",
+      "model": "Concorde",
+      "year": "1995",
+      "status": "retired"
+    },
+    {
+      "id": "91c3",
+      "registrationNumber": "B-18917",
+      "model": "Boeing 777",
+      "year": "2019",
+      "status": "flying"
+    },
+    {
+      "id": "a4d2",
+      "registrationNumber": "N320AA",
+      "model": "Airbus A320",
+      "year": "2020",
+      "status": "maintenance"
+    },
+    {
+      "id": "b7e5",
+      "registrationNumber": "G-BOAF",
+      "model": "Concorde",
+      "year": "1976",
+      "status": "retired"
+    },
+    {
+      "id": "c8f1",
+      "registrationNumber": "JA602A",
+      "model": "Boeing 767",
+      "year": "2005",
+      "status": "flying"
+    },
+    {
+      "id": "d9g3",
+      "registrationNumber": "SP-LRH",
+      "model": "Embraer E195",
+      "year": "2017",
+      "status": "active"
+    },
+    {
+      "id": "e2h7",
+      "registrationNumber": "VT-ALJ",
+      "model": "Boeing 777",
+      "year": "2018",
+      "status": "maintenance"
     }
   ],
   "aircrafts_status_history": [
