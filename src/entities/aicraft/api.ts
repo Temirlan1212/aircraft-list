@@ -11,6 +11,10 @@ export const aircraftApi = baseApi.injectEndpoints({
       query: (id) => `/aircrafts/${id}`,
       providesTags: ["Aircrafts"],
     }),
+    getAircraftByQueryParams: create.query<Aircraft, string>({
+      query: (queryParams) => `/aircrafts?${queryParams}`,
+      providesTags: ["Aircrafts"],
+    }),
     deleteAircraft: create.mutation<void, AircraftId>({
       query: (id) => ({ method: "DELETE", url: `/aircrafts/${id}` }),
       invalidatesTags: ["Aircrafts"],
