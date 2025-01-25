@@ -12,7 +12,7 @@ import {
 import { colors } from "../lib";
 
 const onFinishFailed: FormProps<PatchStatus>["onFinishFailed"] = (
-  errorInfo
+  errorInfo,
 ) => {
   console.log("Failed:", errorInfo);
 };

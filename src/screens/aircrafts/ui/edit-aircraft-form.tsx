@@ -15,7 +15,7 @@ import {
 } from "@/entities/aicraft-status-history";
 
 const onFinishFailed: FormProps<PatchAircraft>["onFinishFailed"] = (
-  errorInfo
+  errorInfo,
 ) => {
   console.log("Failed:", errorInfo);
 };
@@ -44,7 +44,7 @@ export const EditAircraftForm = ({
   const isStatusValueChanged = statusValue != undefined;
 
   const onFinish: FormProps<Aircraft & AddAircraftStatusHistory>["onFinish"] = (
-    values
+    values,
   ) => {
     const aicraftId = id;
 

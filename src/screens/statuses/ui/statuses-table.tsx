@@ -10,7 +10,7 @@ function Column<RecordType extends AnyObject>(
   props: TableColumnProps<RecordType> & {
     key: keyof Status | "action";
     dataIndex?: keyof Status | "action";
-  }
+  },
 ) {
   return <Table.Column {...props} />;
 }

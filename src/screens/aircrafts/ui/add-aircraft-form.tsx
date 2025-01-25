@@ -5,7 +5,7 @@ import { AddAircraft, aircraftApi } from "@/entities/aicraft";
 import { statusApi } from "@/entities/status";
 
 const onFinishFailed: FormProps<AddAircraft>["onFinishFailed"] = (
-  errorInfo
+  errorInfo,
 ) => {
   console.log("Failed:", errorInfo);
 };

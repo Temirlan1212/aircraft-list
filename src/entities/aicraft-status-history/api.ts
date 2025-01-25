@@ -29,7 +29,7 @@ export const aircraftStatusHistoryApi = baseApi.injectEndpoints({
           method: "DELETE",
           url: `/aircrafts_status_history/${id}`,
         }),
-      }
+      },
     ),
     addAircraftStatusHistory: create.mutation<void, AddAircraftStatusHistory>({
       query: (payload) => ({

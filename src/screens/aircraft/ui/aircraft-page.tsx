@@ -11,7 +11,7 @@ export function AircraftPage() {
   const { aircraftId } = useGetSlugs();
   const aircraftGetQuery = aircraftApi.useGetAircraftQuery(aircraftId);
   const statusGetQuery = statusApi.useGetStatusQuery(
-    aircraftGetQuery.data?.status || ""
+    aircraftGetQuery.data?.status || "",
   );
 
   if (aircraftGetQuery.isLoading || statusGetQuery.isLoading)

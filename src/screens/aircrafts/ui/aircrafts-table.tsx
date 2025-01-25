@@ -14,7 +14,7 @@ function Column<RecordType extends AnyObject>(
   props: TableColumnProps<RecordType> & {
     key: keyof Aircraft | "action";
     dataIndex?: keyof Aircraft | "action";
-  }
+  },
 ) {
   return <Table.Column {...props} />;
 }
