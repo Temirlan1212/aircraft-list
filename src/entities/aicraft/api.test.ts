@@ -19,7 +19,7 @@ describe("useGetAircraftsQuery", () => {
       Promise.resolve({
         status: 200,
         body: JSON.stringify({ data }),
-      })
+      }),
     );
   });
 
