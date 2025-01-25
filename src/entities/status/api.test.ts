@@ -25,14 +25,14 @@ describe("getStatusById", () => {
       Promise.resolve({
         status: 200,
         body: JSON.stringify(data),
-      })
+      }),
     );
 
     const { result } = renderHook(
       () => statusApi.useGetStatusByIdQuery(statusId),
       {
         wrapper: StoreProvider,
-      }
+      },
     );
 
     await waitFor(() => expect(result.current.isSuccess).toBe(true));

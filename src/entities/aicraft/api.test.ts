@@ -19,7 +19,7 @@ describe("useGetAircraftsQuery", () => {
       Promise.resolve({
         status: 200,
         body: JSON.stringify({ data }),
-      })
+      }),
     );
   });
 
@@ -63,7 +63,7 @@ describe("useGetAircraftQuery", () => {
       Promise.resolve({
         status: 200,
         body: JSON.stringify({ data }),
-      })
+      }),
     );
   });
 
@@ -72,7 +72,7 @@ describe("useGetAircraftQuery", () => {
       () => aircraftApi.useGetAircraftQuery(aircraftId),
       {
         wrapper: StoreProvider,
-      }
+      },
     );
 
     expect(result.current).toMatchObject({
@@ -118,7 +118,7 @@ describe("getAircraftByQueryParams", () => {
       Promise.resolve({
         status: 200,
         body: JSON.stringify(data), // Sending raw object
-      })
+      }),
     );
   });
 
@@ -128,7 +128,7 @@ describe("getAircraftByQueryParams", () => {
         aircraftApi.useGetAircraftByQueryParamsQuery(`model=${aircraftModel}`),
       {
         wrapper: StoreProvider,
-      }
+      },
     );
 
     expect(result.current).toMatchObject({

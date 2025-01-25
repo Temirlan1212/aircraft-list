@@ -29,17 +29,17 @@ describe("getAircraftStatusHistory", () => {
         Promise.resolve({
           status: 200,
           body: JSON.stringify(data),
-        })
+        }),
     );
 
     const { result } = renderHook(
       () =>
         aircraftStatusHistoryApi.useGetAircraftStatusHistoryQuery(
-          statusHistoryId
+          statusHistoryId,
         ),
       {
         wrapper: StoreProvider,
-      }
+      },
     );
 
     await waitFor(() => expect(result.current.isSuccess).toBe(true));
