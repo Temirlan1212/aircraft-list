@@ -12,8 +12,13 @@ export const statusApi = baseApi.injectEndpoints({
       providesTags: ["Statuses"],
       transformResponse: (res: Status[]) => res?.[0],
     }),
+    getStatusById: create.query<Status, StatusId>({
+      query: (id) => `/statuses/${id}`,
+      providesTags: ["Statuses"],
+    }),
     deleteStatus: create.mutation<void, StatusId>({
       query: (id) => ({ method: "DELETE", url: `/statuses/${id}` }),
+      invalidatesTags: ["Statuses"],
     }),
     addStatus: create.mutation<void, AddStatus>({
       query: (payload) => ({

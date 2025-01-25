@@ -20,6 +20,13 @@
       "model": "lims",
       "year": "2024",
       "status": "active"
+    },
+    {
+      "id": "508a",
+      "registrationNumber": "robot",
+      "model": "robot",
+      "year": "2000",
+      "status": "flying"
     }
   ],
   "aircrafts_status_history": [
@@ -86,6 +93,37 @@
       "newStatus": "maintenance",
       "createdAt": "2025-01-24T20:58:22.584Z",
       "updatedAt": "2025-01-24T20:58:22.584Z"
+    },
+    {
+      "id": "0917",
+      "aicraftId": "02cd",
+      "newStatus": "maintenance",
+      "createdAt": "2025-01-24T21:00:26.360Z",
+      "updatedAt": "2025-01-24T21:00:26.360Z"
+    },
+    {
+      "id": "a524",
+      "aicraftId": "508a",
+      "comment": "this robot is flying",
+      "newStatus": "flying",
+      "createdAt": "2025-01-25T08:04:14.751Z",
+      "updatedAt": "2025-01-25T08:04:14.751Z"
+    },
+    {
+      "id": "5801",
+      "aicraftId": "508a",
+      "comment": "deleted tag",
+      "newStatus": "maintenance",
+      "createdAt": "2025-01-25T08:05:45.327Z",
+      "updatedAt": "2025-01-25T08:05:45.327Z"
+    },
+    {
+      "id": "ebb2",
+      "aicraftId": "508a",
+      "comment": "On the fly",
+      "newStatus": "flying",
+      "createdAt": "2025-01-25T08:22:20.611Z",
+      "updatedAt": "2025-01-25T08:22:20.611Z"
     }
   ],
   "statuses": [
@@ -106,6 +144,12 @@
       "value": "retired",
       "label": "Retired",
       "color": "gray"
+    },
+    {
+      "id": "4b85",
+      "value": "flying",
+      "label": "On the air",
+      "color": "lightgreen"
     }
   ]
 }
