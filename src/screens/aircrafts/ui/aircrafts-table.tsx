@@ -11,12 +11,14 @@ import { paths } from "@/shared/constants/routes";
 import { statusApi } from "@/entities/status";
 import { useAircraftFilterFields } from "./aircraft-filter-fields";
 import { useAppMediaQueries } from "@/shared/hooks/use-app-media-quries";
+import { ControlledModal } from "@/shared/ui/controlled-modal";
+import { AircraftStatusHistoryTable } from "@/widgets/aircraft-status-history-table";
 
 function Column<RecordType extends AnyObject>(
   props: TableColumnProps<RecordType> & {
     key: keyof Aircraft | "action";
     dataIndex?: keyof Aircraft | "action";
-  },
+  }
 ) {
   return <Table.Column {...props} />;
 }
@@ -44,7 +46,7 @@ export function AircraftsTable() {
 
   const { data: aircrafts, isLoading } =
     aircraftApi.useGetAircraftByQueryParamsQuery(
-      convertValuesToQueryParams(isMobile ? submitValues : values),
+      convertValuesToQueryParams(isMobile ? submitValues : values)
     );
 
   const [deleteAircraft, deleteAircraftProps] =
@@ -96,6 +98,16 @@ export function AircraftsTable() {
               <Link href={paths.aircraft({ aircraftId: record.id })}>
                 <Button icon={<EyeOutlined />}>detail page</Button>
               </Link>
+
+              <ControlledModal
+                title="Aircraft Status History"
+                defaultTriggerProps={{ children: "show history" }}
+                render={() => (
+                  <div style={{ marginTop: "20px" }}>
+                    <AircraftStatusHistoryTable aircraftId={record.id} />
+                  </div>
+                )}
+              />
             </Space>
           )}
         />

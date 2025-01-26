@@ -4,14 +4,14 @@ import { useGetSlugs } from "@/shared/hooks/use-get-slugs";
 import { AircraftDetails } from "./aircraft-details";
 import { aircraftApi } from "@/entities/aicraft";
 import { statusApi } from "@/entities/status";
-import { AircraftStatusHistoryTable } from "./aircraft-status-history-table";
+import { AircraftStatusHistoryTableWithCard } from "@/widgets/aircraft-status-history-table";
 import { BackButton } from "@/shared/ui/back-button";
 
 export function AircraftPage() {
   const { aircraftId } = useGetSlugs();
   const aircraftGetQuery = aircraftApi.useGetAircraftQuery(aircraftId);
   const statusGetQuery = statusApi.useGetStatusQuery(
-    aircraftGetQuery.data?.status || "",
+    aircraftGetQuery.data?.status || ""
   );
 
   if (aircraftGetQuery.isLoading || statusGetQuery.isLoading)
@@ -29,7 +29,7 @@ export function AircraftPage() {
         }}
       />
 
-      <AircraftStatusHistoryTable />
+      <AircraftStatusHistoryTableWithCard />
     </>
   );
 }
