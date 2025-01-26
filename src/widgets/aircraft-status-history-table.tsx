@@ -16,7 +16,7 @@ function Column<RecordType extends AnyObject>(
   props: TableColumnProps<RecordType> & {
     key: keyof AircraftStatusHistory | "action";
     dataIndex?: keyof AircraftStatusHistory | "action";
-  }
+  },
 ) {
   return <Table.Column {...props} />;
 }
@@ -34,14 +34,14 @@ const RenderStatusColumn = ({ value }: { value: string }) => {
 interface DataType extends AircraftStatusHistory {}
 
 export function AircraftStatusHistoryTable(
-  props: Partial<Pick<SlugsProps, "aircraftId">>
+  props: Partial<Pick<SlugsProps, "aircraftId">>,
 ) {
   const slugs = useGetSlugs();
   const aircraftId = props?.aircraftId || slugs?.aircraftId;
 
   const { data: aircraftsStatusHistory, isLoading } =
     aircraftStatusHistoryApi.useGetAircraftsStatusHistoryQuery(
-      `?aicraftId=${aircraftId}&_sort=createdAt&_order=desc`
+      `?aicraftId=${aircraftId}&_sort=createdAt&_order=desc`,
     );
 
   // const isEmpty = aircraftsStatusHistory && aircraftsStatusHistory.length == 0;
@@ -72,7 +72,7 @@ export function AircraftStatusHistoryTable(
 }
 
 export function AircraftStatusHistoryTableWithCard(
-  props: Partial<Pick<SlugsProps, "aircraftId">>
+  props: Partial<Pick<SlugsProps, "aircraftId">>,
 ) {
   return (
     <Card title="Aircraft Status History" bodyStyle={{ padding: 12 }}>
