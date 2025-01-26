@@ -11,7 +11,7 @@ export const aircraftApi = baseApi.injectEndpoints({
       query: (id) => `/aircrafts/${id}`,
       providesTags: ["Aircrafts"],
     }),
-    getAircraftByQueryParams: create.query<Aircraft, string>({
+    getAircraftByQueryParams: create.query<Aircraft[], string>({
       query: (queryParams) => `/aircrafts?${queryParams}`,
       providesTags: ["Aircrafts"],
     }),

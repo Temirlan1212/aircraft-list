@@ -21,12 +21,13 @@
     "antd": "^5.23.2",
     "date-fns": "^4.1.0",
     "fs": "^0.0.1-security",
-    "json-server": "^1.0.0-beta.3",
+    "json-server": "^0.17.4",
     "next": "14.2.18",
     "nextjs-toploader": "^3.7.15",
     "react": "^18",
     "react-dom": "^18",
-    "react-redux": "^9.2.0"
+    "react-redux": "^9.2.0",
+    "react-responsive": "^10.0.0"
   },
   "devDependencies": {
     "@commitlint/cli": "^19.6.1",
