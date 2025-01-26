@@ -150,7 +150,7 @@ export const useAircraftFilterFields = () => {
 
   const handleFieldChange = <K extends keyof AddAircraft>(
     key: K,
-    value: AddAircraft[K]
+    value: AddAircraft[K],
   ) => {
     setValues((prev) => ({ ...prev, [key]: value }));
   };
@@ -159,7 +159,7 @@ export const useAircraftFilterFields = () => {
 
   const convertValuesToQueryParams = (
     values: Partial<AddAircraft>,
-    filterType: string = "_like"
+    filterType: string = "_like",
   ) => {
     const params = new URLSearchParams();
 

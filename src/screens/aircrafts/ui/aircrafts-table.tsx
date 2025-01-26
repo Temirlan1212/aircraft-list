@@ -16,7 +16,7 @@ function Column<RecordType extends AnyObject>(
   props: TableColumnProps<RecordType> & {
     key: keyof Aircraft | "action";
     dataIndex?: keyof Aircraft | "action";
-  }
+  },
 ) {
   return <Table.Column {...props} />;
 }
@@ -44,7 +44,7 @@ export function AircraftsTable() {
 
   const { data: aircrafts, isLoading } =
     aircraftApi.useGetAircraftByQueryParamsQuery(
-      convertValuesToQueryParams(isMobile ? submitValues : values)
+      convertValuesToQueryParams(isMobile ? submitValues : values),
     );
 
   const [deleteAircraft, deleteAircraftProps] =
