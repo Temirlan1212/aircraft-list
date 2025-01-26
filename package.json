@@ -4,6 +4,7 @@
   "private": true,
   "scripts": {
     "dev": "concurrently \"next dev\" \"json-server --watch db.json --port 8000\"",
+    "dev:deploy": "next dev",
     "dev:server": "json-server --watch db.json --port 8000",
     "build": "next build",
     "start": "concurrently  \"next start\" \"json-server --watch db.json --port 8000\" \"next build\"",

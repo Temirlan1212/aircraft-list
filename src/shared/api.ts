@@ -1,6 +1,7 @@
 import { createApi, fetchBaseQuery } from "@reduxjs/toolkit/query/react";
+import { envs } from "./envs";
 
-export const baseUrl = "http://localhost:8000";
+export const baseUrl = envs.baseApi;
 
 export const baseApi = createApi({
   baseQuery: fetchBaseQuery({
