@@ -15,7 +15,7 @@ function Column<RecordType extends AnyObject>(
   props: TableColumnProps<RecordType> & {
     key: keyof AircraftStatusHistory | "action";
     dataIndex?: keyof AircraftStatusHistory | "action";
-  },
+  }
 ) {
   return <Table.Column {...props} />;
 }
@@ -36,7 +36,7 @@ export function AircraftStatusHistoryTable() {
   const { aircraftId } = useGetSlugs();
   const { data: aircraftsStatusHistory, isLoading } =
     aircraftStatusHistoryApi.useGetAircraftsStatusHistoryQuery(
-      `?aicraftId=${aircraftId}&_sort=-createdAt`,
+      `?aicraftId=${aircraftId}&_sort=createdAt&_order=desc`
     );
 
   // const isEmpty = aircraftsStatusHistory && aircraftsStatusHistory.length == 0;
